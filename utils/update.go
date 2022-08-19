@@ -16,7 +16,11 @@ import (
 
 type UpdateRequest struct {
 	ClientId           string
+	DisplayName        string
+	CountryCode        string
 	DynamicInformation system.DynamicInformation
+	UpdateTime         time.Time
+	Online             bool
 }
 
 func Update() {
@@ -27,7 +31,7 @@ func Update() {
 }
 
 func GetDynamicInformation() {
-	cc, _ := cpu.Percent(time.Millisecond*200, false)
+	cc, _ := cpu.Percent(time.Millisecond*300, false)
 	v, _ := mem.VirtualMemory()
 	d, _ := disk.Usage("/")
 
@@ -38,7 +42,7 @@ func GetDynamicInformation() {
 	system.StaticDynamicInformation.CPUAvg = cc[0]
 	system.StaticDynamicInformation.MemAll = v.Total
 	system.StaticDynamicInformation.MenUsed = v.Used
-	system.StaticDynamicInformation.MenFree = v.Free
+	system.StaticDynamicInformation.MenFree = v.Total - v.Used
 	system.StaticDynamicInformation.MemUsedPercent = float64(v.Used) / float64(v.Total) * 100.0
 	system.StaticDynamicInformation.DiskInformation.Total = d.Total / 1024 / 1024 / 1024
 	system.StaticDynamicInformation.DiskInformation.Used = d.Used / 1024 / 1024 / 1024
@@ -72,21 +76,23 @@ func Send() {
 		}
 	}(c)
 
-	done := make(chan struct{})
-
-	go func() {
-		defer close(done)
-	}()
-
 	for true {
 		GetDynamicInformation()
 		updateRequest := UpdateRequest{
 			ClientId:           config.Config.ClientId,
+			DisplayName:        config.Config.DisplayName,
+			CountryCode:        system.StaticBasicInformation.CountryCode,
 			DynamicInformation: system.StaticDynamicInformation,
+			UpdateTime:         time.Now(),
 		}
 		err := c.WriteJSON(updateRequest)
 		if err != nil {
 			logger.Error("Websocket writing json error", err)
+			err := c.Close()
+			if err != nil {
+				logger.Error("Websocket close error", err)
+				return
+			}
 			return
 		}
 		time.Sleep(time.Second * 1)

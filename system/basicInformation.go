@@ -1,7 +1,7 @@
 package system
 
 type BasicInformation struct {
-	IP             string
+	IP             string `json:"query"`
 	CPUs           []CPU
 	CPUPhysicalCnt int
 	CPULogicalCnt  int
