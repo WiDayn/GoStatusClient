@@ -11,12 +11,21 @@ type DynamicInformation struct {
 	NowDownStreamDataSize   int
 	NowUpStreamDataSize     int
 	DiskInformation         DiskInformation
+	CU                      PingStatus
+	CT                      PingStatus
+	CM                      PingStatus
 }
 
 type DiskInformation struct {
 	Total   uint64
 	Used    uint64
 	Percent uint64
+}
+
+type PingStatus struct {
+	AvgRTT         int64
+	PacketsReceive int
+	PacketsSent    int
 }
 
 var StaticDynamicInformation DynamicInformation

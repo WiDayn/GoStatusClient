@@ -57,6 +57,9 @@ func GetDynamicInformation() {
 	system.StaticDynamicInformation.NowUpStreamDataSize = int((tempUpStreamDataSize - system.StaticDynamicInformation.TotalUpStreamDataSize) / 1024)
 	system.StaticDynamicInformation.TotalDownStreamDataSize = tempDownStreamDataSize
 	system.StaticDynamicInformation.TotalUpStreamDataSize = tempUpStreamDataSize
+	system.StaticDynamicInformation.CT.AvgRTT, system.StaticDynamicInformation.CT.PacketsReceive, system.StaticDynamicInformation.CT.PacketsSent = Ping(config.Config.CT.Addr)
+	system.StaticDynamicInformation.CU.AvgRTT, system.StaticDynamicInformation.CU.PacketsReceive, system.StaticDynamicInformation.CU.PacketsSent = Ping(config.Config.CU.Addr)
+	system.StaticDynamicInformation.CM.AvgRTT, system.StaticDynamicInformation.CM.PacketsReceive, system.StaticDynamicInformation.CM.PacketsSent = Ping(config.Config.CM.Addr)
 }
 
 func Send() {

@@ -13,11 +13,18 @@ type config struct {
 	Debug       bool
 	DisplayName string
 	Server      Server
+	CT          PingAddr
+	CU          PingAddr
+	CM          PingAddr
 }
 
 type Server struct {
 	IP   string
 	Port int
+}
+
+type PingAddr struct {
+	Addr string
 }
 
 var Config config
@@ -37,6 +44,9 @@ func Read() {
 		Config = config{
 			ClientId:    uuid.NewV4().String(),
 			DisplayName: "Server",
+			CT:          PingAddr{Addr: "14.116.225.60"},
+			CU:          PingAddr{Addr: "123.125.96.156"},
+			CM:          PingAddr{Addr: "39.134.69.205"},
 		}
 
 		if err = ini.MapTo(&Config, "./config.ini"); err != nil {

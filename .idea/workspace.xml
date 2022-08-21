@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1b4b2f-8eb7-4701-aecc-52b5f8d1d060" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/GoStatusClient" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GoStatusClient.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ping.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoStatusClient" beforeDir="false" afterPath="$PROJECT_DIR$/GoStatusClient" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/basicInformation.go" beforeDir="false" afterPath="$PROJECT_DIR$/system/basicInformation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/dynamicInformation.go" beforeDir="false" afterPath="$PROJECT_DIR$/system/dynamicInformation.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/update.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/update.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,19 +84,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/utils/update.go</url>
-          <line>45</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
