@@ -79,6 +79,12 @@ func Send() {
 		}
 	}(c)
 
+	err = c.WriteJSON(config.Config.SecretKey)
+	if err != nil {
+		logger.Error("Websocket writing json error", err)
+		return
+	}
+
 	for true {
 		GetDynamicInformation()
 		updateRequest := UpdateRequest{

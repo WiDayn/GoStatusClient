@@ -10,6 +10,7 @@ import (
 
 type config struct {
 	ClientId    string
+	SecretKey   string `comment:"需要与服务器[SecretKey]字段一致"`
 	Debug       bool
 	DisplayName string
 	Server      Server

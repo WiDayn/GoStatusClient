@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1b4b2f-8eb7-4701-aecc-52b5f8d1d060" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/ping.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoStatusClient" beforeDir="false" afterPath="$PROJECT_DIR$/GoStatusClient" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/dynamicInformation.go" beforeDir="false" afterPath="$PROJECT_DIR$/system/dynamicInformation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/register.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/update.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/update.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

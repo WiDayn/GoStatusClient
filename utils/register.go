@@ -21,7 +21,7 @@ func Register() {
 		BasicInformation: system.StaticBasicInformation,
 	})
 
-	feedback, _ := net.PostRequest("http://"+config.Config.Server.IP+":"+strconv.Itoa(config.Config.Server.Port)+"/register", string(post))
+	feedback, _ := net.PostRequest("http://"+config.Config.Server.IP+":"+strconv.Itoa(config.Config.Server.Port)+"/register?SecretKey="+config.Config.SecretKey, string(post))
 
 	println(feedback)
 }
